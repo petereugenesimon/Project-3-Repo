@@ -19,7 +19,7 @@ Base = automap_base()
 Base.prepare(autoload_with=engine)
 
 # Save reference to the table
-cods_ = Base.classes.states
+COD = Base.classes
 
 #################################################
 # Flask Setup
