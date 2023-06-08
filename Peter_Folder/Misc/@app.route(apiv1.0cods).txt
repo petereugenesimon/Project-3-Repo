@@ -1,0 +1,29 @@
+@app.route("/api/v1.0/cods")
+def cods():
+  
+    session = Session(engine)
+
+    # Query all passengers
+    results = session.query(COD.Year, COD.State, COD.NaturalCause,
+                            COD.Diabetes, COD.Alzheimerdisease, COD.Influenza_pneumonia,
+                            COD.Symptomsnotelsewhereclassified, COD.Diseasesofheart,
+                            COD.COVID_19MultipleCauseofDeath, COD.COVID_19UnderlyingCauseofDeath).all()
+
+    session.close()
+
+    cods_list = []
+    for Year, State, NaturalCause, Diabetes, Alzheimerdisease, Influenza_pneumonia, Symptomsnotelsewhereclassified, Diseasesofheart, COVID_19MultipleCauseofDeath, COVID_19UnderlyingCauseofDeath in results:
+        cods_dict = {}
+        cods_dict["Year"] = Year
+        cods_dict["State"] = State
+        cods_dict["Natural Cause"] = NaturalCause
+        cods_dict["Diabetes"] = Diabetes
+        cods_dict["Alzheimers"] = Alzheimerdisease
+        cods_dict["Flu & Pneumonia"] = Influenza_pneumonia
+        cods_dict["Unclassified Symptoms"] = Symptomsnotelsewhereclassified
+        cods_dict["Heart Disease"] = Diseasesofheart
+        cods_dict["COVID-19 Contributing"] = COVID_19MultipleCauseofDeath
+        cods_dict["COVID-19 Underlying"] = COVID_19UnderlyingCauseofDeath
+        cods_list.append(cods_dict)
+
+    return jsonify(cods_list)

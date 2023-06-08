@@ -36,24 +36,23 @@ def main_page():
     
     return render_template('index.html')
 
-@app.route("/api/v1.0/cod")
-def cod():
+@app.route("/api/v1.0/cods")
+def cods():
   
     session = Session(engine)
 
     # Query all passengers
-    results = session.query(COD.Year, COD.State, COD.NaturalCause,
-                            COD.Diabetes, COD.Alzheimerdisease, COD.Influenza_pneumonia,
-                            COD.Symptomsnotelsewhereclassified, COD.Diseasesofheart,
-                            COD.COVID_19MultipleCauseofDeath, COD.COVID_19UnderlyingCauseofDeath).all()
+    results = session.query(COD.Year).all()
 
     session.close()
 
-    # cod_list = []
-    # for Year, State, NaturalCause, Diabetes, Alzheimerdisease, Influenza_pneumonia, Symptomsnotelsewhereclassified, Diseasesofheart, COVID_19MultipleCauseofDeath, COVID_19UnderlyingCauseofDeath in results:
-    #     cod_dict = {}
+    cods_list = []
+    for Year, State in results:
+        cods_dict = {}
+        cods_dict["Year"] = Year
+        cods_list.append(cods_dict)
 
-    # return jsonify(results)
+    return jsonify(cods_list)
 
 if __name__ == '__main__':
     app.run(debug=False)
