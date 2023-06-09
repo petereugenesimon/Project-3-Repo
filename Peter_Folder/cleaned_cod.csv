@@ -1,4 +1,4 @@
-Year,State,Natural Cause,Diabetes,Alzheimer disease,Influenza & pneumonia,Symptoms not elsewhere classified,Diseases of heart,COVID-19 (Multiple Cause of Death),COVID-19 (Underlying Cause of Death)
+Year,State,Natural Cause,Diabetes,Alzheimers,Influenza_pneumonia,Symptoms_not_elsewhere_classified,Diseases_of_heart,COVID_19_Multiple,COVID_19_Underlying
 2020,Alabama,59772,1430,3095,1095,1150,14739,6860,6406
 2020,Alaska,4283,0,0,0,0,888,181,143
 2020,Arizona,70296,2609,3321,1150,1083,14724,9575,8810
