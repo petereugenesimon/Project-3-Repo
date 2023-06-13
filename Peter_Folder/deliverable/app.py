@@ -40,14 +40,14 @@ def main_page():
 def codsYears():
     session = Session(engine)
 
-    results = session.query(COD.year, COD.state, COD.natural_cause).all()
+    results = session.query(COD.year, COD.state, COD.natural_cause, COD.diabetes, COD.alzheimers, COD.influenza_pneumonia, COD.heart_disease, COD.covid).all()
 
     session.close()
 
     df = pd.DataFrame(results)
     results = {}
-    results["2020"] = df[df['year']=="2020"].groupby(['state'])['natural_cause'].sum().to_dict()
-    results["2021"] = df[df['year']=="2021"].groupby(['state'])['natural_cause'].sum().to_dict()
+    results["2020"] = df[df['year']=="2020"].sum().to_dict()
+    results["2021"] = df[df['year']=="2021"].sum().to_dict()
     return jsonify(results)
 
 @app.route("/api/v1.0/cods")
