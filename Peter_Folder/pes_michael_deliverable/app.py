@@ -1,5 +1,6 @@
 import numpy as np
 import sqlite3
+from flask import Flask, jsonify, request
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
 from sqlalchemy import create_engine, func
@@ -30,7 +31,6 @@ app = Flask(__name__)
 #################################################
 # Flask Routes
 #################################################
-
 @app.route("/")
 def main_page():
     
@@ -46,10 +46,8 @@ def codsYears():
 
     df = pd.DataFrame(results)
     results = {}
-    results["2020"] = df[df['year']=="2020"].groupby(['state']).sum().to_dict()
-    results["2021"] = df[df['year']=="2021"].groupby(['state']).sum().to_dict()
     results["2022"] = df[df['year']=="2022"].groupby(['state']).sum().to_dict()
-    results["2023"] = df[df['year']=="2023"].groupby(['state']).sum().to_dict()
+    #results["2021"] = df[df['year']=="2021"].groupby(['state']).sum().to_dict()
     return jsonify(results)
 
 @app.route("/api/v1.0/cods")
@@ -94,3 +92,5 @@ def cods():
 
 if __name__ == '__main__':
     app.run(debug=False)
+
+
