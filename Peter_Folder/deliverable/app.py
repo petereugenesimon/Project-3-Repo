@@ -46,8 +46,8 @@ def codsYears():
 
     df = pd.DataFrame(results)
     results = {}
-    results["2020"] = df[df['year']=="2020"].sum().to_dict()
-    results["2021"] = df[df['year']=="2021"].sum().to_dict()
+    results["2020"] = df[df['year']=="2020"].groupby(['state']).sum().to_dict()
+    results["2021"] = df[df['year']=="2021"].groupby(['state']).sum().to_dict()
     return jsonify(results)
 
 @app.route("/api/v1.0/cods")
