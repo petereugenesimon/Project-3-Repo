@@ -4,55 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Titanic Passengers</title>
+    <title>National Causes of Death</title>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
 </head>
 <body>
-    <!-- <h1>Titanic Passengers</h1>
-    <p>Change the dropdown below to update the plots</p>
+    <h1>National Causes of Death</h1>
+    <p>Change the dropdown below to update the plot</p>
     <select id="selDataset">
-        <option value="Survived">Survived</option>
-        <option value="Died">Died</option>
+        <option value="alzheimers">alzheimers</option>
+        <option value="natural_cause">natural_causes</option>
+        <option value="heart_disease">heart_disease</option>
     </select>
 
     <div id="plot"></div>
 
-    <h4>Data Sources:</h4>
-        <ul>
-            <li>
-                <p>Titanic Database: To Do</p>
-            </li>
-            <li>
-                <p>1</p>
-            </li>
-        </ul> -->
-
-    <h4>Accessing the Titanic Passenger API</h4>
-    <p>The following endpoints are available to access data:</p>
+    <h4>Accessing the Cause of Death API</h4>
+    <p>The following endpoint are available to access data:</p>
     <ul>
-        <!-- <li>
-            <a href="/api/v1.0/names">/api/v1.0/names</a>
-            <p>Access a list of all passenger names</p>
-        </li> -->
-        <<li>
+        <li>
             <a href="/api/v1.0/cods">/api/v1.0/cods</a>
-            <p>Return a list of passenger data including the name, age, and sex of each passenger</p>
         </li>
-        <!-- <li>
-            <a href="/api/v1.0/passengerbyname/<name>">/api/v1.0/passengerbyname/&lt;name&gt;</a>
-            <p>Search for passengers by name. For example:</p>
-            <a href="/api/v1.0/passengerbyname/Behr,%20Mr%20Karl%20Howell">/api/v1.0/passengerbyname/Behr,%20Mr%20Karl%20Howell</a>
-        </li> -->
+        <li>
+            <a href="/api/v1.0/codsYears">/api/v1.0/codsYears</a>
+        </li>
     </ul>
     
-    <!-- <h4>Source Code:</h4>
-    <a href="https://github.com/paloblanco/flask-demo-fullstack">https://github.com/paloblanco/flask-demo-fullstack</a>
+    <h4>Source Code:</h4>
+    <a href="https://data.cdc.gov/NCHS/Weekly-Provisional-Counts-of-Deaths-by-State-and-S/muzy-jte6/explore/query/SELECT%0A%20%20%60data_as_of%60%2C%0A%20%20%60jurisdiction_of_occurrence%60%2C%0A%20%20%60mmwryear%60%2C%0A%20%20%60mmwrweek%60%2C%0A%20%20%60week_ending_date%60%2C%0A%20%20%60all_cause%60%2C%0A%20%20%60natural_cause%60%2C%0A%20%20%60septicemia_a40_a41%60%2C%0A%20%20%60malignant_neoplasms_c00_c97%60%2C%0A%20%20%60diabetes_mellitus_e10_e14%60%2C%0A%20%20%60alzheimer_disease_g30%60%2C%0A%20%20%60influenza_and_pneumonia_j09_j18%60%2C%0A%20%20%60chronic_lower_respiratory%60%2C%0A%20%20%60other_diseases_of_respiratory%60%2C%0A%20%20%60nephritis_nephrotic_syndrome%60%2C%0A%20%20%60symptoms_signs_and_abnormal%60%2C%0A%20%20%60diseases_of_heart_i00_i09%60%2C%0A%20%20%60cerebrovascular_diseases%60%2C%0A%20%20%60covid_19_u071_multiple_cause_of_death%60%2C%0A%20%20%60covid_19_u071_underlying_cause_of_death%60%2C%0A%20%20%60flag_allcause%60%2C%0A%20%20%60flag_natcause%60%2C%0A%20%20%60flag_sept%60%2C%0A%20%20%60flag_neopl%60%2C%0A%20%20%60flag_diab%60%2C%0A%20%20%60flag_alz%60%2C%0A%20%20%60flag_inflpn%60%2C%0A%20%20%60flag_clrd%60%2C%0A%20%20%60flag_otherresp%60%2C%0A%20%20%60flag_nephr%60%2C%0A%20%20%60flag_otherunk%60%2C%0A%20%20%60flag_hd%60%2C%0A%20%20%60flag_stroke%60%2C%0A%20%20%60flag_cov19mcod%60%2C%0A%20%20%60flag_cov19ucod%60/page/filter">Link to Data</a>
  
-    <h4>Contact:</h4>
-    <a href="https://github.com/paloblanco">Rocco Panella</a>
+    <h4>GitHub:</h4>
+    <a href="https://github.com/petereugenesimon/Project-3-Repo">Project 3 Repo</a>
 
-    <script src="static/js/plots.js"></script> --> -->
+    <script src="static/plots.js"></script>
 </body>
 </html>
+
+
