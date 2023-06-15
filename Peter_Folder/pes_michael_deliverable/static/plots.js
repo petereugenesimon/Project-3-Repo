@@ -24,7 +24,12 @@ function getDataPlot(data, filter) {
     let trace = {
       x: xValues,
       y: yValues,
-      type: 'bar'
+      type: 'bar',
+      transforms: [{
+        type: 'sort',
+        target: 'x',
+        order: 'descending'
+      }]
     };
 
     let layout = {
